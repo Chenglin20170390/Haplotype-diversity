@@ -24,7 +24,7 @@ cat assembly.hifiasm.H1.fa assembly.hifiasm.H2.fa > assembly.Hapall.fa
 ##for merged_nodups.txt from 3ddna
     bwa index $assembly.fa
     python2 juicer-1.6/misc/generate_site_positions.py MboI assembly.Hapall  assembly.Hapall.fa
-    awk 'BEGIN{OFS=\"\t\"}{print \$1,\$NF}' assembly.Hapall_MboI.txt > assembly.Hapall.chrom.size
+    awk 'BEGIN{OFS="\t"}{print $1,$NF}' assembly.Hapall_MboI.txt > assembly.Hapall.chrom.size
     mkdir reference
     mkdir fastq 
     cd fastq
@@ -51,15 +51,19 @@ python 01_2assemblyto1.sort.py assembly.H1.assembly assembly.H2.assembly assembl
 
 ##Then you  need to correct your hic contact map mannually by using juicerbox.
 ```
+
 Here are some methods that you will interseting in the correction of your assembly.
+```
 https://github.com/baozg/phased-assembly-check
 https://www.youtube.com/watch?v=Nj7RhQZHM18&t=378s   ## Or bilibili  BV1B4411r77A
 ```
 
 ##Finally, you will get a haplotype-resolved genome.
-3d-dna/run-asm-pipeline-post-review.sh -q 0 -r assembly.Hapall.review.assembly assembly.Hapall.fa assembly.Hapall.merged_nodups.txt
-
 ```
+3d-dna/run-asm-pipeline-post-review.sh -q 0 -r assembly.Hapall.review.assembly assembly.Hapall.fa assembly.Hapall.merged_nodups.txt
+```
+
+
 2.1 Assembly assessment.
 ```
 ##N50,gap and size summary (software assembly-stats)
@@ -76,9 +80,9 @@ you could also used  WhatsHap compare function for this purpose.
 3. Genome annotation.
 
 For genome annotation, we used pipline from Baozhigui's article below:
-```
+``
 Bao Z, Li C, Li G, Wang P, Peng Z, Cheng L, Li H, Zhang Z, Li Y, Huang W, Ye M, Dong D, Cheng Z, VanderZaag P, Jacobsen E, Bachem CWB, Dong S, Zhang C, Huang S, Zhou Q. Genome architecture and tetrasomic inheritance of autotetraploid potato. Mol Plant. 2022 Jul 4;15(7):1211-1226. doi: 10.1016/j.molp.2022.06.009. Epub 2022 Jun 22. PMID: 35733345.
-```
+``
 
 
 
