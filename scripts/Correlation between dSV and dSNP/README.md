@@ -55,7 +55,7 @@ for sample in $(cat list30);do
 done
 ```
 
-## For dSV enrich level  of dSNP ( up tp 1Mb)
+## For dSV enrichment analysis  of dSNP ( up tp 1Mb)
 - Bin file for enrichment analysis
 ```
 mkdir 01_dbin
