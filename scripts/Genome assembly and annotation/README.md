@@ -89,7 +89,8 @@ busco -m genome -i $asm -o busco_${sample}  --offline -l embryophyta_odb10 -c $t
 
 
 ## 3. Genome annotation.
-- For genome annotation, we used pipline from Zhigui Bao's article below:
+- For genome annotation, we used [pipline](https://github.com/baozg/assembly-annotation-pipeline/tree/main) with a minor modification from Zhigui Bao's article below:
+
 ``
 Bao Z, Li C, Li G, Wang P, Peng Z, Cheng L, Li H, Zhang Z, Li Y, Huang W, Ye M, Dong D, Cheng Z, VanderZaag P, Jacobsen E, Bachem CWB, Dong S, Zhang C, Huang S, Zhou Q. Genome architecture and tetrasomic inheritance of autotetraploid potato. Mol Plant. 2022 Jul 4;15(7):1211-1226. doi: 10.1016/j.molp.2022.06.009. Epub 2022 Jun 22. PMID: 35733345.
 ``
