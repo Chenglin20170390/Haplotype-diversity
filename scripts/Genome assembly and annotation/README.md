@@ -93,6 +93,5 @@ busco -m genome -i $asm -o busco_${sample}  --offline -l embryophyta_odb10 -c $t
 ``
 Bao Z, Li C, Li G, Wang P, Peng Z, Cheng L, Li H, Zhang Z, Li Y, Huang W, Ye M, Dong D, Cheng Z, VanderZaag P, Jacobsen E, Bachem CWB, Dong S, Zhang C, Huang S, Zhou Q. Genome architecture and tetrasomic inheritance of autotetraploid potato. Mol Plant. 2022 Jul 4;15(7):1211-1226. doi: 10.1016/j.molp.2022.06.009. Epub 2022 Jun 22. PMID: 35733345.
 ``
- <img width="1015" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/b669e63e-bd8f-4de6-ad5d-3f37c8d2c448">
 
   
