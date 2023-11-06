@@ -1,8 +1,8 @@
-# Ideal Potato Haplotye (IPH v1.0)![github](https://img.shields.io/badge/3C-Certification-red)        
+# Ideal Potato Haplotyes (IPHs v1.0)![github](https://img.shields.io/badge/3C-Certification-red)        
 ![github](https://img.shields.io/badge/Potato-square-hex)        ![github](https://img.shields.io/badge/Haplotype--resolved-green)         ![github](https://img.shields.io/badge/Deleterious-SV-red)       
 
 
-IPH v1.0  was designed form two heterotic groups with minimized dSVs and dSNPs, which will guide recurrent selection of elite inbred lines (The Upotato Plan:https://agis.caas.cn/en/research/principalinvestigator/237658.htm).
+IPHs v1.0  was designed form two heterotic groups with minimized dSVs and dSNPs, which will guide recurrent selection of elite inbred lines (The Upotato Plan:https://agis.caas.cn/en/research/principalinvestigator/237658.htm).
 
 In the future, we will develop IPH v2.0, incorporating of beneficial alleles associated with vigorous agronomic traits and further reducing deleterious variations through synthetic biology and genome editing. Although this step is currently challenging, we believe it will be possible to artificially synthesize potato chromosomes, even genomes, to create desirable ideal potato varieties within the next few decades.
 <img width="790" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/9fc55715-d1a4-4a34-8c2e-1344a3913151">
