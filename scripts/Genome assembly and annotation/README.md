@@ -85,7 +85,7 @@ busco -m genome -i $asm -o busco_${sample}  --offline -l embryophyta_odb10 -c $t
 
 - Switch and hamming errors (https://github.com/tangerzhang/calc_switchErr)
 - You could also used  WhatsHap compare function for this purpose.
-- Reliable analysis of Flagger (https://github.com/mobinasri/flagger)
+- Reliable analysis of Flagger (https://github.com/mobinasri/flagger)，Here we not do optional step in Flagger piplines.
 
 
 ## 3. Genome annotation.
