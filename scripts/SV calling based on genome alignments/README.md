@@ -1,25 +1,33 @@
 ## Variation calling (minimap2,samtools and syri)
-- SV simulation based on diploid potato genome
-
+<img width="600" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/8000eb0b-bcec-4495-961d-f0c8a6517d04">
 
 - Alignment（Genomes and Reads） for BAM file
 ```
-ref=DM.reference.fa
-asm=$sample.hap1.assembly.fa
-ccs=$sample.hap1.ccs.fa
-sample=C001
-minimap2 -ax asm5 -t $th --eqx $ref $asm | samtools sort -O BAM - > DM.$sample.$hap.bam
-samtools index DM.$sample.$hap.bam
-minimap2 -ax asm5 -t $th --eqx $ref $ccs | samtools sort -O BAM - > DM.$sample.$hap.ccs.bam
-samtools index DM.$sample.$hap.ccs.bam
+for sample in $(cat list);do
+    ref=DM.reference.fa
+    for hap in H1 H2;do
+    asm=$sample.$hap.assembly.fa  ##haplotypes
+    ccs=$sample.$hap.hifi.fa   ##hifi reads
+    th=10 ##threads for running
+    minimap2 -ax asm5 -t $th --eqx $ref $asm | samtools sort -O BAM - > DM.$sample.$hap.bam
+    samtools index DM.$sample.$hap.bam
+    minimap2 -ax asm5 -t $th --eqx $ref $ccs | samtools sort -O BAM - > DM.$sample.$hap.ccs.bam
+    samtools index DM.$sample.$hap.ccs.bam
+    done
+done
 ```
 - Variation calling from syri based on BAM from assembly
 ```
-py38=/home/softwares/miniconda3/envs/py38/bin/python
-syri=/home/softwares/syri1.5/bin/syri
-plotsr=/home/softwares/syri/bin/plotsr
-$py38 $syri -c DM.$sample.$hap.bam -r $ref -q $asm -F B --prefix DM.$sample.$hap.
-$py38 $plotsr DM.$sample.$hap.syri.out $ref $asm -H 8 -W 5
+for sample in $(cat list);do
+    for hap in H1 H2;do
+    ref=DM.reference.fa
+    py38=/home/softwares/miniconda3/envs/py38/bin/python
+    syri=/home/softwares/syri1.5/bin/syri
+    plotsr=/home/softwares/syri/bin/plotsr
+    $py38 $syri -c DM.$sample.$hap.bam -r $ref -q $asm -F B --prefix DM.$sample.$hap.
+    $py38 $plotsr DM.$sample.$hap.syri.out $ref $asm -H 8 -W 5
+    done
+done    
 ```
 - Variant  filtering based on INS DEL INV DUP at column 11.
 ```
