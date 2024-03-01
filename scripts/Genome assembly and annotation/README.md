@@ -52,7 +52,7 @@ need to change based on your species)
 python 01_2assemblyto1.sort.py assembly.H1.assembly assembly.H2.assembly assembly.Hapall.assembly
 ```
 
-- Hic contact map for haplotype resolved genome (you may nned to change -q to 1 for high heterozygous genome assembly)
+- Hic contact map for haplotype resolved genome (you may need to change -q to 1 for high heterozygous genome assembly)
 ```
 3d-dna/visualize/run-assembly-visualizer.sh -q 0 assembly.Hapall.assembly merged_nodups.txt
 ```
@@ -82,9 +82,18 @@ assembly-stats  $dir/$sample.$hap.chr.fa >01_ind/$sample.$hap.N.stats
 ```
 busco -m genome -i $asm -o busco_${sample}  --offline -l embryophyta_odb10 -c $th
 ```
+-QV(https://github.com/lh3/yak)
+```
+yak count -b37 -t32 -o $sample.yak <(zcat ${sample}.R*.fq.gz) <(zcat ${sample}.R*.fq.gz)
+yak qv -t32 -p -K3.2g -l100k $sample.yak $asm > $sample.qv.txt
 
-- Switch and hamming errors (https://github.com/tangerzhang/calc_switchErr)
-- You could also used  WhatsHap compare function for this purpose.
+```
+- Switch and Hamming errors (https://github.com/tangerzhang/calc_switchErr)
+- Generally, switch and Hamming errors were caculated by two phased vcf from reads and phased assemblies, respectively. https://github.com/tangerzhang/calc_switchErr pipline.
+Then, we compared two types phased errors from whatshap compare fuction
+```
+whatshap compare $sample.reads.vcf $sample.assembly.vcf > $sample.phased_error.txt
+```
 - Reliable analysis of Flagger (https://github.com/mobinasri/flagger)，Here we not do optional step in Flagger piplines.
 
 
