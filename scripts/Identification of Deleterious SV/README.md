@@ -5,7 +5,7 @@
 cat 60.hap.sv.fre.bed |awk '$6<=3' > 01_het_fre/sv.all.3.bed
 ```
 
-- We need two files for identify dSV 1.[Reference gene file](https://academic.oup.com/gigascience/article/9/9/giaa100/5910251) (DMv6.gff file) 2.[Constraint regions](https://doi.org/10.1016/j.cell.2023.04.008)（GERP>=2）
+- We need two files for identify dSV 1.[The CDS of Reference genome file](https://academic.oup.com/gigascience/article/9/9/giaa100/5910251) (DMv6.gff file) 2.[Constraint regions](https://doi.org/10.1016/j.cell.2023.04.008)（GERP>=2）
 ```
 Here refrence file named  DM.gff3 ; constraint file named Sol_msa_AllChrs_GERP_withDepth.bed_Conserved2.info
 
