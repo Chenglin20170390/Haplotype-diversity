@@ -27,7 +27,7 @@ AA, BB, CC. et al. Leveraging a phased pangenome to design ideal haplotypes for 
 
 
 # Acknowledgements
-I want to thank [Nan Wang](https://github.com/wangnan9394), [Zhigui Bao](https://github.com/baozg) for contribution of the script for this analysis. I also want to thank AA, BB ,CC and many more others for testing, debugging, and improving the pipeline.
+I want to thank [Nan Wang](https://github.com/wangnan9394), [Zhigui Bao](https://github.com/baozg) for contribution of the script for this analysis. I also want to thank [Peter L. Morrell](https://github.com/pmorrell), [ZhiYang Zhang](https://github.com/zhangzhiyangcs) and many more others for suggesting, testing, debugging, and improving the pipeline.
 
 
 
