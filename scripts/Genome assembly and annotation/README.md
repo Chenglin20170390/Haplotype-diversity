@@ -24,28 +24,34 @@ done
 
 - For initial assembly (https://github.com/chhylp123/hifiasm)
 ```
-hifiasm -o $assembly -t 20 $input.hifi.fastq.fa --h1 $hic_1 --h2 $hic_2
-cat assembly.hifiasm.H1.fa assembly.hifiasm.H2.fa > assembly.Hapall.fa
+for sample in $(cat list);do
+hifiasm -o $sample.assembly -t 20 $sample.hifi.fastq.fa --h1 $sample.hic.fastq.R1.gz --h2 $sample.hic.fastq.R1.gz
+cat $sample.assembly.hifiasm.H1.fa $sample.assembly.hifiasm.H2.fa > $sample.assembly.Hapall.fa
+done
 ```
-- for merged_nodups.txt from 3ddna (https://github.com/aidenlab/3d-dna)
+- For Hic contact information by alignment hic to phased assemblies before scaffording contig into phased pseudo-chromosome (https://github.com/aidenlab/3d-dna)
 ```
-    bwa index $assembly.fa
-    python2 juicer-1.6/misc/generate_site_positions.py MboI assembly.Hapall  assembly.Hapall.fa
-    awk 'BEGIN{OFS="\t"}{print $1,$NF}' assembly.Hapall_MboI.txt > assembly.Hapall.chrom.size
+    for sample in $(cat list);do
+    bwa index $sample.assembly.Hapall.fa
+    python2 juicer-1.6/misc/generate_site_positions.py MboI $sample.assembly.Hapall  $sample.assembly.Hapall.fa
+    awk 'BEGIN{OFS="\t"}{print $1,$NF}' $sample.assembly.Hapall_MboI.txt > $sample.assembly.Hapall.chrom.size
     mkdir reference
     mkdir fastq 
-    cd fastq
-    ln -s $hic_dir/$name/${name}_R1.fq.gz ${name}_R1.fastq.gz
-    ln -s $hic_dir/$name/${name}_R2.fq.gz ${name}_R2.fastq.gz
+    cd fastq   ##put hic files in this directory
+    ln -s $sample.hic.fastq.R1.gz ${sample}_R1.fastq.gz
+    ln -s $sample.hic.fastq.R2.gz ${sample}_R2.fastq.gz
     cd ..
-    scripts=/home/chenglin/softwares/juicer-1.6/CPU/common
-    sh juicer-1.6/CPU/juicer.sh -s MboI -g assembly.Hapall -D $scripts -z assembly.Hapall.fa -p assembly.Hapall.chrom.sizes -y assembly.Hapall_MboI.txt
+    scripts=/path to /juicer-1.6/CPU/common
+    sh juicer-1.6/CPU/juicer.sh -s MboI -g $sample.assembly.Hapall -D $scripts -z $sample.assembly.Hapall.fa -p $sample.assembly.Hapall.chrom.sizes -y $sample.assembly.Hapall_MboI.txt
+    done
 ```
 - Anchoring of initial contigs to the DM reference genome for easy manual correction of contigs.(https://github.com/malonge/RagTag)
 ```
-ref=DM.reference .fa
-ragtag.py scaffold $ref $assembly.hifiasm.H1.fa -o ragtag_H1
-ragtag.py scaffold $ref $assembly.hifiasm.H2.fa -o ragtag_H2
+for sample in $(cat list);do
+ref=DM.reference .fa  ##reference genome or relative species genome
+ragtag.py scaffold $ref $sample.assembly.hifiasm.H1.fa -o ragtag_H1
+ragtag.py scaffold $ref $asample.ssembly.hifiasm.H2.fa -o ragtag_H2
+done
 ```
 - Converting ragtag apg file to assembly format (agp2assembly.py from 3d-dna)
 ```
@@ -72,7 +78,7 @@ https://github.com/baozg/phased-assembly-check
 https://www.youtube.com/watch?v=Nj7RhQZHM18&t=378s   ## Or bilibili  BV1B4411r77A
 
 
-- Finally, you will get a haplotype-resolved genome.
+- Finally, you will get a haplotype-resolved genome by below command.
 ```
 3d-dna/run-asm-pipeline-post-review.sh -q 0 -r assembly.Hapall.review.assembly assembly.Hapall.fa assembly.Hapall.merged_nodups.txt
 ```
@@ -80,18 +86,24 @@ https://www.youtube.com/watch?v=Nj7RhQZHM18&t=378s   ## Or bilibili  BV1B4411r77
 
 ## 2.1 Assembly assessment.
 
-- N50,gap and size summary ([software assembly-stats](https://github.com/sanger-pathogens/assembly-stats))
+- Summary of N50,Gap, genome size et al  ([software assembly-stats](https://github.com/sanger-pathogens/assembly-stats))
 ```
-assembly-stats  $dir/$sample.$hap.chr.fa >01_ind/$sample.$hap.N.stats
+for sample in $(cat list);do
+assembly-stats  $sample.Hapall.fa > $sample.stats
+done
 ```
 - BUSCO  (software busco)
 ```
-busco -m genome -i $asm -o busco_${sample}  --offline -l embryophyta_odb10 -c $th
+for sample in $(cat list);do
+busco -m genome -i $sample.Hapall,fa -o busco_${sample}  --offline -l embryophyta_odb10 -c 10
+done
 ```
 -QV(https://github.com/lh3/yak)
 ```
+for sample in $(cat list);do
 yak count -b37 -t32 -o $sample.yak <(zcat ${sample}.R*.fq.gz) <(zcat ${sample}.R*.fq.gz)
 yak qv -t32 -p -K3.2g -l100k $sample.yak $asm > $sample.qv.txt
+done
 
 ```
 - Switch and Hamming errors (https://github.com/tangerzhang/calc_switchErr)
