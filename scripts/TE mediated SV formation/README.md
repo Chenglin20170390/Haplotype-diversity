@@ -1,5 +1,6 @@
 # TE mediated SV formation
-<img width="600" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/94436e36-04d4-4945-ac85-2ae5248d7d82">
+<img width="600" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/928373ad-bc5d-414f-8595-0200cf8c84b2">
+
 Reference:Balachandran, P., Walawalkar, I.A., Flores, J.I. et al. Transposable element-mediated rearrangements are prevalent in human genomes. Nat Commun 13, 7115 (2022).
 
 ## Identification of repeats elements
