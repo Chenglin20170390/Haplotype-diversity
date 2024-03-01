@@ -1,17 +1,23 @@
+# The general workflow for Genome assembly and annotation
+<img width="600" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/56ce3e4c-4ddc-4e00-894c-5a354d7489dd">
 
 ## 1. Genome survey.
 
 - For summary HiFi and Hic reads (https://github.com/shenwei356/seqkit)
 ```
-seqkit stats $hifi.fastq.fa
-seqkit stats $hic.fastq.R1.fa  $hic.fastq.R2.fa 
+for sample in $(cat list);do
+seqkit stats $sample.hifi.fastq.fa
+seqkit stats $sample.hic.fastq.R1.fa  $sample.hic.fastq.R2.fa
+done
 ```
 - Genome size,heterozygousity,repeat elements estimation (https://github.com/gmarcais/Jellyfish and https://github.com/schatzlab/genomescope)
 
 ```
-jellyfish count -C -m 21 -s 1000000000 -o $sample.reads.jf -t 10 <(zcat $sample.ccs.fastq.gz) 
-jellyfish histo -t 10 $sample/$sample.reads.jf > $sample.reads.histo
-genomescope.R  ../$sample/$sample.reads.histo 21 15000 ./
+for sample in $(cat list);do
+jellyfish count -C -m 21 -s 1000000000 -o $sample.reads.jf -t 10 <(zcat $sample.hifi.fastq.gz) 
+jellyfish histo -t 10 $sample.reads.jf > $sample.reads.histo
+genomescope.R  ../$sample.reads.histo 21 15000 ./
+done
 ```
 
 ## 2. Genome assembly.
