@@ -1,5 +1,5 @@
 ## Variation calling (minimap2,samtools and syri)
-<img width="600" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/8000eb0b-bcec-4495-961d-f0c8a6517d04">
+<img width="300" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/8000eb0b-bcec-4495-961d-f0c8a6517d04">
 
 - Alignment（Genomes and Reads） for BAM file
 ```
