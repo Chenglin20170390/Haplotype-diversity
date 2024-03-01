@@ -1,5 +1,7 @@
 # Identification of Deleterious SVs (dSVs)
 
+<img width="300" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/c9798f27-336d-4bb6-bc0d-ad357b2dca8e">
+
 - Frequency of SV no more than three
 ```
 cat 60.hap.sv.fre.bed |awk '$6<=3' > 01_het_fre/sv.all.3.bed
