@@ -8,7 +8,7 @@ In the future, we will develop IPH v2.0, incorporating of beneficial alleles ass
 <img width="790" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/9fc55715-d1a4-4a34-8c2e-1344a3913151">
 
 # Workflow Overview
-<img width="600" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/68a495a2-1e81-4193-9734-0db42a033c33">
+<img width="600" alt="image" src="https://github.com/Chenglin20170390/Haplotype-diversity/assets/33062118/97935282-4ee3-4084-a70c-0ef8f6f94134">
 
 The scripts expect to be run in roughly this order:
 
