@@ -1,1 +1,1 @@
-- continue
+- please click the interest analyses for detils
