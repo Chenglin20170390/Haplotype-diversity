@@ -1,0 +1,20 @@
+1.	Evaluate the demography of the cultivated potato population (19 cultivars). We split VCF files based on chromosome and buid *.smc.gz files
+'''
+smc++ vcf2smc chr01.vcf.gz ./out/chr01.smc.gz chr01 CUL:sample1, sample2,…
+'''
+2.	We execute the estimate command to model the demography of each chromosome. For example, chr01.
+'''
+smc++ estimate -o analysis/ 1.67e-8 out/example.chr01.smc.gz 
+'''
+3.	We generated the final demography records for Pyrho
+'''
+smc++ plot Potato.pdf -c analysis/model.final.json
+'''
+4.	We build a lookup table for 38 haplotypes and estimated demography.
+'''
+pyrho make_table -n 38 -N 50 --mu 1.67e-8 --logfile . --outfile Potato_n_38_N_50_lookuptable.hdf --approx --numthreads 30 --smcpp_file Potato.csv --decimate_rel_tol 0.1
+'''
+5.	We estimated the genome-wide recombination rate. For example, chr01.
+'''
+pyrho optimize --vcffile chr01.BEAGLE.vcf --windowsize 30 --blockpenalty 30 --tablefile Potato_n_38_N_50_lookuptable.hdf --ploidy 1 --outfile chr1.recombination.out --numthreads 20
+'''
