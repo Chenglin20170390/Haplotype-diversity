@@ -93,5 +93,5 @@ done
 i=01
 nohup iqtree2 -s  03_chr_fa/chr$i.pep.aligned.fa  -m  JTT+F+R5 -o Outgroup -T 10 -B 1000 > chr$i.log  &
 
-##then you can visulization by the function of ggdensitree from ggtree(https://yulab-smu.top/treedata-book/chapter4.html)
 ```
+- then you can visulization by the function of ggdensitree from ggtree(https://yulab-smu.top/treedata-book/chapter4.html)
