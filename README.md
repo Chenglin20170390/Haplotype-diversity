@@ -18,7 +18,8 @@ The scripts expect to be run in roughly this order:
 - [4. TE mediated SV formation](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/TE%20mediated%20SV%20formation)
 - [5. Identification of Deleterious SV](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/Identification%20of%20Deleterious%20SV)
 - [6. Correlation between dSV and dSNP](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/Correlation%20between%20dSV%20and%20dSNP)
-- [7. Designing Ideal potato haplotypes (IPH)](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/Designing%20Ideal%20potato%20haplotypes%20(IPH))![github](https://img.shields.io/badge/3C-Certification-red)  
+- [7. Designing Ideal potato haplotypes (IPHs)](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/Designing%20Ideal%20potato%20haplotypes%20(IPH))![github](https://img.shields.io/badge/3C-Certification-red)
+- [8. Supplementary Figs and other analysis](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/Supplementary%20Figs%20and%20other%20analysis)
 
 
 # Citations
@@ -29,7 +30,7 @@ AA, BB, CC. et al. Leveraging a phased pangenome to design ideal haplotypes for 
 
 
 # Acknowledgements
-I want to thank [Nan Wang](https://github.com/wangnan9394), [Zhigui Bao](https://github.com/baozg) for contribution of the script for this analysis. I also want to thank [Peter L. Morrell](https://github.com/pmorrell), [ZhiYang Zhang](https://github.com/zhangzhiyangcs) and many more others for suggesting, testing, debugging, and improving the pipeline.
+I want to thank [Nan Wang](https://github.com/wangnan9394), [Zhigui Bao](https://github.com/baozg) for contribution of the script for this analysis. I also want to thank [Peter L. Morrell](https://github.com/pmorrell), [Andrea Guarracino](https://github.com/AndreaGuarracino), [ZhiYang Zhang](https://github.com/zhangzhiyangcs) and many more others for suggesting, testing, debugging, and improving the pipeline.
 
 
 
