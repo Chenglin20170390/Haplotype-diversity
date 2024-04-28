@@ -95,3 +95,9 @@ nohup iqtree2 -s  03_chr_fa/chr$i.pep.aligned.fa  -m  JTT+F+R5 -o Outgroup -T 10
 
 ```
 - then you can visulization by the function of ggdensitree from ggtree(https://yulab-smu.top/treedata-book/chapter4.html)
+
+### - Principal component analysis(PCA) for haplotype diversity
+```
+plink --vcf all.vcf.gz --recode --out 60hap --allow-extra-chr --pca  5
+```
+
