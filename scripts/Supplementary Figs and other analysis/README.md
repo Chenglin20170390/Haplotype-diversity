@@ -1,4 +1,4 @@
-### - Haplotype divergence (heterozygosity) based on Genome Variation by sequence length(GVSL).
+### - Haplotype divergence (heterozygosity) based on Genome Variation by Sequence Length(GVSL).
 
 - VCF files with SNPs and SVs (insertion, deletion, inversion and duplication) from syri.output
 
