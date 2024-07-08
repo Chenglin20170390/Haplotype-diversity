@@ -20,6 +20,7 @@ The scripts expect to be run in roughly this order:
 - [6. Correlation between dSV and dSNP](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/Correlation%20between%20dSV%20and%20dSNP)
 - [7. Designing Ideal potato haplotypes (IPHs)](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/Designing%20Ideal%20potato%20haplotypes%20(IPH))![github](https://img.shields.io/badge/3C-Certification-red)
 - [8. Supplementary Figs and other analysis](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/Supplementary%20Figs%20and%20other%20analysis)
+- [9. Genome heterozygosity by sequence length (GHSL))](https://github.com/Chenglin20170390/Haplotype-diversity/tree/main/scripts/Genome%20hetGenome%20heterozygosity%20by%20sequence%20length%20(GHSL))
 
 
 # Citations
