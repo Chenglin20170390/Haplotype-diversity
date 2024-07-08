@@ -1,5 +1,4 @@
-## - Genome heterozygosity by sequence length(GHSL)
-## - Haplotype divergence (heterozygosity)
+## - Genome heterozygosity by sequence length(GHSL) or Haplotype divergence
 
 
 - Step
