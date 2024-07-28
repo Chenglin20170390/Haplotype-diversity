@@ -34,5 +34,7 @@ asm_per=`awk 'BEGIN{printf "%.2f%\n",('$v_size'/'$asm_size')*100}'`
 echo $sample $snp_size $indels $ins_size  $del_size  $inv_size  $dup_size $asm_size $asm_per |sed 's/\s\+/\t/g' >> divergence.all.txt
 done
 sed  -i '1iID\tSNP\tInDels\tINS\tDEL\tINV\tDUP\tGenome_size\tVariant_percent' divergence.all.txt
+
+##Note:: for Non-redundant lenght you may used 'bedtools merge' commands.##
 ```
 
