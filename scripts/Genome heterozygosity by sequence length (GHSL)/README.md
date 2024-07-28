@@ -1,4 +1,5 @@
 ## - Genome heterozygosity by sequence length(GHSL) 
+<img width="730" alt="image" src="https://github.com/user-attachments/assets/a37c1e9a-7c6b-424d-919e-4fe3d659846d">
 
 
 - Step
