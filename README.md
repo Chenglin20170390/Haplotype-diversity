@@ -26,8 +26,7 @@ The scripts expect to be run in roughly this order:
 # Citations
 Please cite our paper if you find scripts useful:
 ***
-AA, BB, CC. et al. Leveraging a phased pangenome to design ideal haplotypes for hybrid potato breeding. article 1–7 (2023/2024).
-
+Cheng, L., Wang, N., Bao, Z. et al. Leveraging a phased pangenome for haplotype design of hybrid potato. _Nature_ (2025). https://doi.org/10.1038/s41586-024-08476-9
 
 
 # Acknowledgements
