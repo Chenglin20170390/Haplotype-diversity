@@ -7,13 +7,13 @@ for sample in $(cat list);do
     ref=DM.reference.fa
     for hap in H1 H2;do
     asm=$sample.$hap.assembly.fa  ##haplotypes
-    ccs=$sample.$hap.hifi.fa   ##hifi reads
+    ccs=$sample.hifi.fa   ##hifi reads
     th=10 ##threads for running
     minimap2 -ax asm5 -t $th --eqx $ref $asm | samtools sort -O BAM - > DM.$sample.$hap.bam
     samtools index DM.$sample.$hap.bam
-    minimap2 -ax asm5 -t $th --eqx $ref $ccs | samtools sort -O BAM - > DM.$sample.$hap.ccs.bam
-    samtools index DM.$sample.$hap.ccs.bam
     done
+    minimap2 -ax asm5 -t $th --eqx $ref $ccs | samtools sort -O BAM - > DM.$sample.ccs.bam
+    samtools index DM.$sample.ccs.bam
 done
 ```
 - Variation calling from syri based on BAM from assembly
@@ -63,8 +63,8 @@ sample='$sample'
 bin=0
 export PATH=/public/software/env01/bin/:$PATH
 for hap in H1 H2;do
-samtools depth -b 01_cov/$sample.$hap.sv.up.$bin.bed -Q 50 -a  01_bam/$sample.dm.$sample.bam -@ 2 > 04_bk_cov/$sample.$hap.up.123.Q50.cov
-samtools depth -b 01_cov/$sample.$hap.sv.dn.$bin.bed  -Q 50 -a 01_bam/$sample.dm.$sample.bam -@ 2 > 04_bk_cov/$sample.$hap.dn.123.Q50.cov
+samtools depth -b 01_cov/$sample.$hap.sv.up.$bin.bed -Q 50 -a  DM.$sample.ccs.bam -@ 2 > 04_bk_cov/$sample.$hap.up.123.Q50.cov
+samtools depth -b 01_cov/$sample.$hap.sv.dn.$bin.bed  -Q 50 -a DM.$sample.ccs.bam -@ 2 > 04_bk_cov/$sample.$hap.dn.123.Q50.cov
 done
 ```
 
